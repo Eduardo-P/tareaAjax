@@ -12,4 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
             select.appendChild(option);
         });
     });
+
+    // Evento Listener para el botón para mostrar el grafico
+    document.getElementById("show_graphic").addEventListener("click", function() {
+        graphic();
+    });
 });
+
+function graphic() {}
