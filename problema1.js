@@ -27,5 +27,11 @@ function graphic() {
     .then(data => {
         var chartsContainer = document.getElementById("graphics");
         chartsContainer.innerHTML = "";
+
+        selectedRegions.forEach(regionName => {
+            var regionData = data.find(region => region.region === regionName);
+
+            var color = '#' + (Math.random().toString(16) + '000000').substring(2,8);
+        });
     });
 }
