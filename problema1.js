@@ -19,4 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function graphic() {}
+function graphic() {
+    var selectedRegions = Array.from(document.getElementById("select_region").selectedOptions).map(option => option.value);
+
+    fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        var chartsContainer = document.getElementById("graphics");
+        chartsContainer.innerHTML = "";
+    });
+}
