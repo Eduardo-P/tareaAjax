@@ -74,6 +74,12 @@ function graphic() {
                         y: {
                             beginAtZero: true
                         }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: section.toUpperCase()
+                        }
                     }
                 }
             });
