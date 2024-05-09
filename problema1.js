@@ -58,5 +58,27 @@ function graphic() {
         });
 
         dates = [...new Set(dates)];
+
+        Object.keys(datasets).forEach(section => {
+            var canvas = document.createElement("canvas");
+            var ctx = canvas.getContext('2d');
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: datasets[section]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            chartsContainer.appendChild(canvas);
+        });
     });
 }
