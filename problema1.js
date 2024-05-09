@@ -41,6 +41,10 @@ function graphic() {
                     if (!datasets[section]) {
                         datasets[section] = [];
                     }
+
+                    var values = regionData[section].map(entry => parseInt(entry.value));
+                    var sectionDates = regionData[section].map(entry => entry.date);
+                    dates = dates.concat(sectionDates);
                 }
             });
         });
