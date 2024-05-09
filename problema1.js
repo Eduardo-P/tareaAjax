@@ -45,6 +45,14 @@ function graphic() {
                     var values = regionData[section].map(entry => parseInt(entry.value));
                     var sectionDates = regionData[section].map(entry => entry.date);
                     dates = dates.concat(sectionDates);
+
+                    datasets[section].push({
+                        label: regionName,
+                        data: values,
+                        fill: false,
+                        borderColor: color,
+                        tension: 0.8
+                    });
                 }
             });
         });
