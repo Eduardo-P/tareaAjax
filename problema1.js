@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
 function graphic() {
     var selectedRegions = Array.from(document.getElementById("select_region").selectedOptions).map(option => option.value);
 
+    var datasets = {};
+    var dates = [];
+
     fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -32,6 +35,14 @@ function graphic() {
             var regionData = data.find(region => region.region === regionName);
 
             var color = '#' + (Math.random().toString(16) + '000000').substring(2,8);
+
+            Object.keys(regionData).forEach(section => {
+                if (Array.isArray(regionData[section])) {
+                    if (!datasets[section]) {
+                        datasets[section] = [];
+                    }
+                }
+            });
         });
     });
 }
