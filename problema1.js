@@ -56,5 +56,7 @@ function graphic() {
                 }
             });
         });
+
+        dates = [...new Set(dates)];
     });
 }
