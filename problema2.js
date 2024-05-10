@@ -25,5 +25,8 @@ function graphic() {
                 tension: 0.4
             });
         });
+
+        var chartsContainer = document.getElementById("graphics");
+        chartsContainer.innerHTML = "";
     });
 }
