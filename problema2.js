@@ -28,5 +28,31 @@ function graphic() {
 
         var chartsContainer = document.getElementById("graphics");
         chartsContainer.innerHTML = "";
+
+        var canvas = document.createElement("canvas");
+        var ctx = canvas.getContext('2d');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: dates,
+                datasets: datasets
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "CONFIRMED"
+                    }
+                }
+            }
+        });
+
+        chartsContainer.appendChild(canvas);
     });
 }
